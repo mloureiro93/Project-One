@@ -21,12 +21,12 @@ window.addEventListener("keydown", event => { //does the name of the event matte
     switch (event.keyCode) {
       case 37:
         this.moveLeft();
-        this.player.draw();
+        //this.player.draw();
         
       break;
       case 39:
         this.moveRight();
-        this.player.draw();
+        //this.player.draw();
        
            
         break;

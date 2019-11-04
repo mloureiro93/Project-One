@@ -11,7 +11,8 @@ class Game {
     this.bottleTimer = 0;
     //this.score = new Score(this);
     this.newSoju = [];
-    //this.newBeer = [];
+    this.beer = new Beer(this);
+    this.newBeer = [];
     //this.newSoup = [];
     this.speed= 3000
     this.controls.keys(); 
@@ -23,19 +24,28 @@ class Game {
       this.background.drawBackground();
       this.soju.updateBottle();
       this.soju.drawBottle();
+      this.beer.updateBottle();
+      this.beer.drawBottle();
+
     window.requestAnimationFrame(timestamp => this.drawEverything(timestamp));
+    
   for (let i = 0; i < this.newSoju.length; i++) {
       this.newSoju[i].drawBottle();
      }
+     for (let i = 0; i < this.newBeer.length; i++) {
+        this.newBeer[i].drawBottle();
+       }
       this.update(timestamp);
     }
     update(timestamp) {
     if (this.bottleTimer < timestamp - this.speed) {
       this.newSoju.push(new Soju (this));
+      this.newBeer.push(new Beer(this));
       this.bottleTimer  = timestamp;
     }
     for (let i = 0; i < this.newSoju.length; i++) {
-      this.newSoju[i].updateBottle();
+     this.newSoju[i].updateBottle();
+     this.newBeer[i].updateBottle();
     }
   }
    startGame(){
