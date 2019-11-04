@@ -1,18 +1,18 @@
 class Player {
     constructor(game){  
     this.game = game;    
-    this.height = game.height;
-    this.width = game.width;
     this.context = game.context;
+    this.width = 60;
+    this.height = 80;
     this.playerX = 170;
-    this.playerY = 450;
+    this.playerY = 415;
     this.vX = 15
     this.playerImg = new Image();
     this.playerImg.src = "images/playertest.jpg";
     
 }
   draw() {
-    game.context.drawImage(this.playerImg, this.playerX, this.playerY, 60, 80);
+    game.context.drawImage(this.playerImg, this.playerX, this.playerY,  this.width,  this.height);
     
 }
  

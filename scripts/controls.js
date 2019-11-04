@@ -21,14 +21,17 @@ window.addEventListener("keydown", event => { //does the name of the event matte
     switch (event.keyCode) {
       case 37:
         this.moveLeft();
-        //this.player.draw();
-        
+    if (game.player.playerX < 0) {
+        game.player.playerX = 0
+    }
+       
       break;
       case 39:
         this.moveRight();
-        //this.player.draw();
-       
-           
+        if (game.player.playerX > game.width - game.player.width) {
+            game.player.playerX = game.width - game.player.width
+        }  
+                       
         break;
     }
   });

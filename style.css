@@ -1,8 +1,15 @@
 body {
-    padding: 100;
+    padding: 100px;
     text-align: center;
   }
 
   canvas {
     border: 1px solid black;
     } 
+
+
+  sidebar{
+      display: flex;
+      padding-top: 20px;
+    }
+  
