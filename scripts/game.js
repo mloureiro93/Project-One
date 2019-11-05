@@ -8,10 +8,14 @@ class Game {
     this.background = new Background(200, 50);
     this.controls = new Controls(this);
     this.fallingElements = new FallingElements(this);
-    this.bottleTimer = 0;
+    this.sojuTimer = 0;
+    this.beerTimer = 0;
+    this.soupTimer = 0;
     this.score = new Score(this);
     this.newElements = [];
-    this.speed = 1000;
+    this.sojuSpeed = 1500;
+    this.beerSpeed = 1000;
+    this.soupSpeed = 3000;
     this.controls.keys();
     
   }
@@ -37,23 +41,32 @@ class Game {
   }
   update(timestamp) {
     this.score.LevelUpdate();
-    if (this.bottleTimer < timestamp - this.speed) {
-      let randomNumber = Math.floor(Math.random() * 3 + 1);
-      if (randomNumber === 1) {
-        this.newElements.push(new Soup(this));
-      } else if (randomNumber === 2) {
-        this.newElements.push(new Soju(this));
-      } else if (randomNumber === 3) {
-        this.newElements.push(new Beer(this));
-      }
-      this.bottleTimer = timestamp;
+let randomNumber = Math.floor(Math.random() * 3 + 1);
+//pushing Sojus in the array
+    if (this.sojuTimer < timestamp - this.sojuSpeed) {
+    if (randomNumber === 1) {
+        this.newElements.push(new Soju(this));} 
+    this.sojuTimer = timestamp
     }
-    for (let i = 0; i < this.newElements.length; i++) {
+//pushing Beers in the array
+   if (this.beerTimer < timestamp - this.beerSpeed) {
+   if (randomNumber === 2) {
+      this.newElements.push(new Beer(this));} 
+    this.beerTimer = timestamp;
+    }
+//pushing Soups in the array    
+    if (this.soupTimer < timestamp - this.soupSpeed) {
+    if (randomNumber === 3) {
+      this.newElements.push(new Soup(this));} 
+    this.soupTimer = timestamp;
+      }
+    
+ for (let i = 0; i < this.newElements.length; i++) {
       this.newElements[i].updateBottle();
       if (
         this.newElements[i].name === "soju" &&
-        this.fallingElements.detectCollision(this.player, this.newElements[i])
-      ) {
+        this.fallingElements.detectCollision(this.player, this.newElements[i]))
+       {
         this.newElements.splice(i, 1);
         this.score.SojuPoints();
         console.log(this.score.score);
@@ -61,14 +74,13 @@ class Game {
       }
       if (
         this.newElements[i].name === "beer" &&
-        this.fallingElements.detectCollision(this.player, this.newElements[i])
-      ) {
+        this.fallingElements.detectCollision(this.player, this.newElements[i]))
+       {
         this.newElements.splice(i, 1);
         this.score.BeerPoints();
         console.log(this.score.score);
         break;
-        
-      }
+     }
       if (
         this.newElements[i].name === "soup" &&
         this.fallingElements.detectCollision(this.player, this.newElements[i]))
@@ -80,8 +92,16 @@ class Game {
      
     }
   }
+//   ResetGame(){
+//    this.sojuSpeed = 2000;
+//    this.beerSpeed = 2000;
+//    this.soupSpeed = 2000;
+//    this.score.score = 0;
+//   }
+
   startGame() {
     this.drawEverything();
-    this.score.ResetScore();
-  }
+    this.score.scorer = 0
+    
+}
 }

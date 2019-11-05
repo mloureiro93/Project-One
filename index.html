@@ -1,35 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="style.css">
-  <title>Document</title>
-</head>
-<body>
-  <div> 
-     
- <sidebar>Total Score: 
-     
- </sidebar> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <sidebar>Total Score: </sidebar>
+    </div>
+    <canvas id="score" width="100" height="50"></canvas>
 
-</div>  
-  <button id="start-button">Start</button>  
-  <canvas width='400' height='500'></canvas>
- 
-  <script type="text/javascript" src='scripts/player.js'></script>
-  <script type="text/javascript" src="scripts/fallingElements.js"></script>
-  <script type="text/javascript" src="scripts/controls.js"></script>
-  <script type="text/javascript" src="scripts/background.js"></script>
- 
- 
-  <script type="text/javascript" src="scripts/score.js"></script>
-  <script type="text/javascript" src="scripts/game.js"></script>
-  <script type="text/javascript" src="scripts/main.js"></script>
-  
+    <button id="start-button">Start</button>
 
+    <canvas id="game" width="400" height="500"></canvas>
 
+    <button id="reset-button">Reset</button>
 
-</body>
+    <script type="text/javascript" src="scripts/player.js"></script>
+    <script type="text/javascript" src="scripts/fallingElements.js"></script>
+    <script type="text/javascript" src="scripts/controls.js"></script>
+    <script type="text/javascript" src="scripts/background.js"></script>
+    <script type="text/javascript" src="scripts/score.js"></script>
+    <script type="text/javascript" src="scripts/game.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+  </body>
 </html>

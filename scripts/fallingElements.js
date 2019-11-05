@@ -36,7 +36,7 @@ super(game)
  this.height = 60;
  this.sojuImg = new Image();
  this.sojuImg.src = "images/testsojubottle.png";
- this.vy = 5;  
+ this.vy = 10;  
  } 
   drawSoju() {
     game.context.drawImage(this.sojuImg, this.elementX, this.elementY,  this.width, this.height);  
@@ -51,7 +51,7 @@ this.width = 20;
 this.height = 60;
 this.beerImg = new Image();
 this.beerImg.src = "images/testbeerbottle.png";    
-this.vy = 5;  
+this.vy = 8;  
  }
  drawBeer() {
         game.context.drawImage(this.beerImg, this.elementX, this.elementY, this.width, this.height);  
@@ -66,7 +66,7 @@ this.width = 50;
 this.height = 50;
 this.soupImg = new Image();
 this.soupImg.src = "images/hangover soup.jpg";    
-this.vy = 7;  
+this.vy = 9;  
  }
  drawSoup() {
         game.context.drawImage(this.soupImg, this.elementX, this.elementY, this.width, this.height);  
