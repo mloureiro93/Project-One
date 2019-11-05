@@ -4,7 +4,7 @@ class FallingElements {
     this.height = game.height;
     this.width = game.width;
     this.context = game.context; 
-    this.elementX = Math.floor((Math.random() * this.width-50) + 20);
+    this.elementX = Math.floor((Math.random() * this.width-50) + 50);
     this.elementY = 20;
        }
    
@@ -29,13 +29,14 @@ class FallingElements {
 
 
 class Soju extends FallingElements {
-    constructor(game) {
-    super(game) 
+constructor(game) {
+super(game) 
+ this.name = 'soju'
  this.width = 20;
  this.height = 60;
  this.sojuImg = new Image();
  this.sojuImg.src = "images/testsojubottle.png";
- this.vy = 3;  
+ this.vy = 5;  
  } 
   drawSoju() {
     game.context.drawImage(this.sojuImg, this.elementX, this.elementY,  this.width, this.height);  
@@ -45,6 +46,7 @@ class Soju extends FallingElements {
 class Beer extends FallingElements {
     constructor(game) {
     super(game) 
+this.name = 'beer'    
 this.width = 20;
 this.height = 60;
 this.beerImg = new Image();
@@ -54,13 +56,12 @@ this.vy = 5;
  drawBeer() {
         game.context.drawImage(this.beerImg, this.elementX, this.elementY, this.width, this.height);  
        }
-
-
 }
 
 class Soup extends FallingElements {
     constructor(game) {
     super(game) 
+this.name = 'soup'
 this.width = 50;
 this.height = 50;
 this.soupImg = new Image();

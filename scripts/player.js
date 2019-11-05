@@ -6,7 +6,7 @@ class Player {
     this.height = 80;
     this.playerX = 170;
     this.playerY = 415;
-    this.vX = 15
+    this.vX = 10
     this.playerImg = new Image();
     this.playerImg.src = "images/playertest.jpg";
     
