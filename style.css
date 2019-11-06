@@ -1,3 +1,7 @@
+* {
+  border: 3px solid orange;
+}
+
 html {
   background-image: url("images/streetbackground.png");
   background-size: 100% 100%;
@@ -5,12 +9,11 @@ html {
   height: 100vh;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  margin-left: 0;
 }
 
 h1 {
   font-family: "Black Han Sans";
-  font-size: 50px;
+  font-size: 70px;
   color: white;
   text-shadow: 3px 2px red;
   padding-top: 50px;
@@ -18,7 +21,7 @@ h1 {
 
 h2 {
   font-family: "Black Han Sans";
-  font-size: 30px;
+  font-size: 50px;
   color: white;
   text-shadow: 3px 2px red;
 }
@@ -27,28 +30,25 @@ body {
   padding-left: 50px;
   text-align: center;
 }
-#images{
-  display: flex;
-  flex-direction: column;
-  
+
+#images p {
+  font-size: 20px;
+  color: #fefefe;
 }
 
-
-#soju{
+#soju {
   float: left;
   padding: 20px;
 }
 
-#beer{
+#beer {
   float: left;
   padding: 20px;
-
 }
 
-#soup{
+#soup {
   float: left;
   padding-top: 20px;
-
 }
 
 /* canvas {
@@ -61,44 +61,55 @@ body {
 
 sidebar {
   display: flex;
-  /* padding-top: 30px; */
+  flex-direction: column;
+  align-items: flex-start;
   font-family: "Black Han Sans";
   color: white;
   font-size: 40px;
   text-shadow: 3px 2px blue;
+  width: 20%;
+  margin: 0;
 }
 
 #start-button {
- 
-    width: 200px;
-    height: 100px;
-    line-height: 113px;
-    font-family: "Black Han Sans";
-    font-size: 80px;
-    background-color: #fefefe;
-    box-shadow: 5px -8px red;
-    color: red;
-    text-shadow: 3px 2px yellow;
-    border: transparent;
-}
-
-#play-again {
-   width: 200px;
+  width: 200px;
   height: 100px;
   line-height: 113px;
   font-family: "Black Han Sans";
-  font-size: 50px;
-  background-color:blue;
+  font-size: 80px;
+  background-color: #fefefe;
   box-shadow: 5px -8px red;
   color: red;
   text-shadow: 3px 2px yellow;
   border: transparent;
 }
 
+#play-again {
+  width: 200px;
+  height: 100px;
+  line-height: 113px;
+  font-family: "Black Han Sans";
+  font-size: 50px;
+  background-color: blue;
+  box-shadow: 5px -8px red;
+  color: red;
+  text-shadow: 3px 2px yellow;
+  border: transparent;
+}
 
 #game {
   width: 0px;
 }
 
 #game-section-container {
+  background-image: url("images/frame.png");
+  background-size: 100%;
+  width: 90%;
+  height: 800px;
+  margin-top: 0px;
+}
+
+.container-flex-img-point {
+  display: flex;
+  align-content: center;
 }

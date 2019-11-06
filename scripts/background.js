@@ -6,7 +6,7 @@ class Background {
     this.context = game.context;  
     this.bossImg = new Image();
     this.bossImg.src = "images/boss.png";
-    this.bossX = 160;
+    this.bossX = 120;
     this.bossY = 5;
     
     }

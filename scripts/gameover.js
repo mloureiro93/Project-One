@@ -7,6 +7,8 @@ class Gameover{
     }
 
     drawGameover(){
+       soundHangover.play();     
+       document.getElementById("game").style.visibility = "hidden";  
        document.getElementById("printer").style.visibility = "visible";
        document.getElementById("printer").style.width = "300px";
        document.getElementById("printer").style.height = "300px";

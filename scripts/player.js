@@ -4,8 +4,8 @@ class Player {
     this.context = game.context;
     this.width = 60;
     this.height = 80;
-    this.playerX = 145;
-    this.playerY = 425;
+    this.playerX = 135;
+    this.playerY = 370;
     this.vX = 10
     this.playerImg = new Image();
     this.playerImg.src = "images/player.png";

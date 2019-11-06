@@ -22,14 +22,23 @@ class Game {
     this.beerSpeed = 1000;
     this.soupSpeed = 3000;
     this.controls.keys();
+    
   }
-  ResetGame(){
-    //  this.sojuSpeed = 2000;
-    //  this.beerSpeed = 2000;
-    //  this.soupSpeed = 2000;
-     this.score.score = 0;
-     this.gameover.lifebarX = 0;
-     console.log(reset)
+  resetGame(){
+    soundHangover.pause();
+    this.sojuSpeed = 1500;
+    this.beerSpeed = 1000;
+    this.soupSpeed = 3000;
+    this.sojuTimer = 0;
+    this.beerTimer = 0;
+    this.soupTimer = 0;
+    this.score.score = 0;
+    this.scoreboard.lifebarX = 0;
+    // this.soju.vy = 10;
+    // this.beer.vy = 8;
+    // this.soup.vy = 9;
+    this.startGame() 
+    
     }
   drawEverything(timestamp) {
     this.context.clearRect(0, 0, 400, 600);
@@ -41,22 +50,26 @@ class Game {
     this.scoreboard.LifeBar(); 
    
     
+    for (let i = 0; i < this.newElements.length; i++) {
+        if (this.newElements[i].name === "soju") {
+            this.newElements[i].drawSoju();
+        }
+        if (this.newElements[i].name === "beer") {
+            this.newElements[i].drawBeer();
+        }
+        if (this.newElements[i].name === "soup") {
+            this.newElements[i].drawSoup();
+        }
+    }
+    if(this.scoreboard.lifebarX >= 200) {
+     this.gameover.drawGameover();
+     } else {
+        this.update(timestamp);
+    }
 
     window.requestAnimationFrame(timestamp => this.drawEverything(timestamp));
+  }    
 
-    for (let i = 0; i < this.newElements.length; i++) {
-      if (this.newElements[i].name === "soju") {
-        this.newElements[i].drawSoju();
-      }
-      if (this.newElements[i].name === "beer") {
-        this.newElements[i].drawBeer();
-      }
-      if (this.newElements[i].name === "soup") {
-        this.newElements[i].drawSoup();
-      }
-    }
-    this.update(timestamp);
-  }
   update(timestamp) {
      console.log(this.scoreboard.lifebarX) 
     this.score.LevelUpdate();
@@ -89,6 +102,7 @@ class Game {
         this.newElements[i].name === "soju" &&
         this.fallingElements.detectCollision(this.player, this.newElements[i])
       ) {
+        soundBottle.play();
         this.newElements.splice(i, 1);
         this.score.SojuPoints();
         this.scoreboard.lifebarX += 20
@@ -99,6 +113,7 @@ class Game {
         this.newElements[i].name === "beer" &&
         this.fallingElements.detectCollision(this.player, this.newElements[i])
       ) {
+        soundBottle.play();
         this.newElements.splice(i, 1);
         this.score.BeerPoints();
         this.scoreboard.lifebarX += 10
@@ -109,16 +124,14 @@ class Game {
         this.newElements[i].name === "soup" &&
         this.fallingElements.detectCollision(this.player, this.newElements[i])
       ) {
+        soundSoup.play();
         this.newElements.splice(i, 1);
         this.score.SoupPoints();
         this.scoreboard.lifebarX -= 10
         console.log(this.score.score);
       }
     }
-    if(this.scoreboard.lifebarX === 200){
-        this.gameover.drawGameover();
-        this.ResetGame();
-    }
+    
   }
     
 

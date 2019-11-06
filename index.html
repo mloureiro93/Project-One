@@ -16,19 +16,30 @@
     <h2>(Duck Away)</h2>
   </header>
   <body>
-    <div>
-      <sidebar>총점: </sidebar>
-      <div id = "images">
-      <img id = "soju" src="images/soju.png" alt="sojubottle" height="90" width="30">
-      <img id = "beer" src="images/beer.png" alt="beerbottle" height="100" width="30">
-      <img id = "soup" src="images/soup.png" alt="soupbowl" height="80" width="80">
-     </div>
+ 
+      <sidebar>
+          <h3>총점:</h3>
+             <canvas id="score" width="200" height="100"></canvas>
+          <div class="container-flex-img-point"> 
+          <img id = "soju" src="images/soju.png" alt="sojubottle" height="90" width="30">
+          <p>+20</p>
+          </div>
+         
+          <div class="container-flex-img-point"> 
+          <img id = "beer" src="images/beer.png" alt="beerbottle" height="100" width="30">
+          <p>+10</p>
+          </div>
+         
+          <div class="container-flex-img-point">
+           <img id = "soup" src="images/soup.png" alt="soupbowl" height="80" width="80">
+           <p>-10</p>
+          </div>
+         </sidebar>
+        
      
-      <canvas id="score" width="300" height="100"></canvas>
-    </div>
     <div id="game-section-container">
       <button id="start-button">시작</button>
-      <canvas id="game" width="350" height="500"></canvas>
+      <canvas id="game" width="250" height="450"></canvas>
      <img id = "printer" src="images/printer.png" alt="printer" height="300" width="300">
       <!-- <button id="reset-button">Reset</button> -->
     </div>
@@ -46,6 +57,7 @@
     <script type="text/javascript" src="scripts/scoreboard.js"></script>
     <script type="text/javascript" src="scripts/score.js"></script>
     <script type="text/javascript" src="scripts/gameover.js"></script>
+    <script type="text/javascript" src="scripts/timer.js"></script>
     <script type="text/javascript" src="scripts/game.js"></script>
     <script type="text/javascript" src="scripts/main.js"></script>
   </body>
