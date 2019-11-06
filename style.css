@@ -103,13 +103,23 @@ sidebar {
 
 #game-section-container {
   background-image: url("images/frame.png");
-  background-size: 100%;
-  width: 90%;
-  height: 800px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 600px;
+  height: 700px;
   margin-top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container-flex-img-point {
   display: flex;
   align-content: center;
+}
+
+.page-structure {
+  display: flex;
+  flex-direction: row;
+ 
 }
