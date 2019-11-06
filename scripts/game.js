@@ -1,9 +1,12 @@
 class Game {
-  constructor($canvas) {
+  constructor($canvas,  $canvasScore) {
     this.canvas = $canvas;
+    this.canvasScore =  $canvasScore;
+    this.contextScore =  $canvasScore.getContext("2d");
     this.context = $canvas.getContext("2d");
     this.height = $canvas.height;
     this.width = $canvas.width;
+    this.gameover = new Gameover(this);
     this.player = new Player(200, 450);
     this.background = new Background(200, 50);
     this.controls = new Controls(this);
@@ -20,12 +23,24 @@ class Game {
     this.soupSpeed = 3000;
     this.controls.keys();
   }
+  ResetGame(){
+    //  this.sojuSpeed = 2000;
+    //  this.beerSpeed = 2000;
+    //  this.soupSpeed = 2000;
+     this.score.score = 0;
+     this.gameover.lifebarX = 0;
+     console.log(reset)
+    }
   drawEverything(timestamp) {
     this.context.clearRect(0, 0, 400, 600);
+    this.contextScore.clearRect(0, 0, 250, 100)
     this.grid.PaintCanvas();
     this.background.drawBackground();
     this.player.draw();
     this.scoreboard.WriteScore();
+    this.scoreboard.LifeBar(); 
+   
+    
 
     window.requestAnimationFrame(timestamp => this.drawEverything(timestamp));
 
@@ -43,6 +58,7 @@ class Game {
     this.update(timestamp);
   }
   update(timestamp) {
+     console.log(this.scoreboard.lifebarX) 
     this.score.LevelUpdate();
     let randomNumber = Math.floor(Math.random() * 3 + 1);
     //pushing Sojus in the array
@@ -75,6 +91,7 @@ class Game {
       ) {
         this.newElements.splice(i, 1);
         this.score.SojuPoints();
+        this.scoreboard.lifebarX += 20
         console.log(this.score.score);
         break;
       }
@@ -84,6 +101,7 @@ class Game {
       ) {
         this.newElements.splice(i, 1);
         this.score.BeerPoints();
+        this.scoreboard.lifebarX += 10
         console.log(this.score.score);
         break;
       }
@@ -93,19 +111,19 @@ class Game {
       ) {
         this.newElements.splice(i, 1);
         this.score.SoupPoints();
+        this.scoreboard.lifebarX -= 10
         console.log(this.score.score);
       }
     }
+    if(this.scoreboard.lifebarX === 200){
+        this.gameover.drawGameover();
+        this.ResetGame();
+    }
   }
-  //   ResetGame(){
-  //    this.sojuSpeed = 2000;
-  //    this.beerSpeed = 2000;
-  //    this.soupSpeed = 2000;
-  //    this.score.score = 0;
-  //   }
+    
 
   startGame() {
     this.drawEverything();
-    this.score.scorer = 0;
+    
   }
 }

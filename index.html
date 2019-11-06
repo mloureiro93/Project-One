@@ -4,20 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Black+Han+Sans:400"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
+  <header>
+    <h1>덕 아우아이</h1>
+    <h2>(Duck Away)</h2>
+  </header>
   <body>
     <div>
-      <sidebar>Total Score: </sidebar>
+      <sidebar>총점: </sidebar>
+      <div id = "images">
+      <img id = "soju" src="images/soju.png" alt="sojubottle" height="90" width="30">
+      <img id = "beer" src="images/beer.png" alt="beerbottle" height="100" width="30">
+      <img id = "soup" src="images/soup.png" alt="soupbowl" height="80" width="80">
+     </div>
+     
+      <canvas id="score" width="300" height="100"></canvas>
     </div>
-    <canvas id="score" width="250" height="100"></canvas>
-
-    <button id="start-button">Start</button>
-
-    <canvas id="game" width="400" height="500"></canvas>
-
-    <button id="reset-button">Reset</button>
+    <div id="game-section-container">
+      <button id="start-button">시작</button>
+      <canvas id="game" width="350" height="500"></canvas>
+     <img id = "printer" src="images/printer.png" alt="printer" height="300" width="300">
+      <!-- <button id="reset-button">Reset</button> -->
+    </div>
+    <div id="gameover-message">
+        <h2>You got drunk and abused <br> the company printing policy...</h2>
+        <h2>Again..</h2>
+        <button id="play-again">다음 회식</button>
+    </div>
 
     <script type="text/javascript" src="scripts/player.js"></script>
     <script type="text/javascript" src="scripts/fallingElements.js"></script>
@@ -26,6 +45,7 @@
     <script type="text/javascript" src="scripts/background.js"></script>
     <script type="text/javascript" src="scripts/scoreboard.js"></script>
     <script type="text/javascript" src="scripts/score.js"></script>
+    <script type="text/javascript" src="scripts/gameover.js"></script>
     <script type="text/javascript" src="scripts/game.js"></script>
     <script type="text/javascript" src="scripts/main.js"></script>
   </body>

@@ -35,7 +35,7 @@ super(game)
  this.width = 20;
  this.height = 60;
  this.sojuImg = new Image();
- this.sojuImg.src = "images/testsojubottle.png";
+ this.sojuImg.src = "images/soju.png";
  this.vy = 10;  
  } 
   drawSoju() {
@@ -50,7 +50,7 @@ this.name = 'beer'
 this.width = 20;
 this.height = 60;
 this.beerImg = new Image();
-this.beerImg.src = "images/testbeerbottle.png";    
+this.beerImg.src = "images/beer.png";    
 this.vy = 8;  
  }
  drawBeer() {
@@ -65,7 +65,7 @@ this.name = 'soup'
 this.width = 50;
 this.height = 50;
 this.soupImg = new Image();
-this.soupImg.src = "images/hangover soup.jpg";    
+this.soupImg.src = "images/soup.png";    
 this.vy = 9;  
  }
  drawSoup() {

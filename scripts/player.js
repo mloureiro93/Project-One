@@ -4,12 +4,12 @@ class Player {
     this.context = game.context;
     this.width = 60;
     this.height = 80;
-    this.playerX = 170;
-    this.playerY = 415;
+    this.playerX = 145;
+    this.playerY = 425;
     this.vX = 10
     this.playerImg = new Image();
-    this.playerImg.src = "images/playertest.jpg";
-    
+    this.playerImg.src = "images/player.png";
+        
 }
   draw() {
     game.context.drawImage(this.playerImg, this.playerX, this.playerY,  this.width,  this.height);

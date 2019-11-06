@@ -5,13 +5,15 @@ class Background {
     this.width = game.width;
     this.context = game.context;  
     this.bossImg = new Image();
-    this.bossImg.src = "images/bossTest.jpg";
-    this.bossX = 180;
-    this.bossY = 10;
+    this.bossImg.src = "images/boss.png";
+    this.bossX = 160;
+    this.bossY = 5;
     
     }
  drawBackground() {
-    game.context.drawImage(this.bossImg, this.bossX, this.bossY, 40, 70);
+    game.context.drawImage(this.bossImg, this.bossX, this.bossY, 50, 80);
+   //  this.context.fillStyle = "white";
+   //  this.context.fillRect(100, 80, 100, 50); 
    
 
  }

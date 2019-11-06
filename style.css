@@ -1,18 +1,59 @@
-html{
-  background-image: url('images/streetbackground.png');
+html {
+  background-image: url("images/streetbackground.png");
   background-size: 100% 100%;
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin-left: 0;
+}
+
+h1 {
+  font-family: "Black Han Sans";
+  font-size: 50px;
+  color: white;
+  text-shadow: 3px 2px red;
+  padding-top: 50px;
+}
+
+h2 {
+  font-family: "Black Han Sans";
+  font-size: 30px;
+  color: white;
+  text-shadow: 3px 2px red;
 }
 
 body {
-  /* padding: 100px; */
   padding-left: 50px;
   text-align: center;
 }
+#images{
+  display: flex;
+  flex-direction: column;
+  
+}
 
-canvas {
+
+#soju{
+  float: left;
+  padding: 20px;
+}
+
+#beer{
+  float: left;
+  padding: 20px;
+
+}
+
+#soup{
+  float: left;
+  padding-top: 20px;
+
+}
+
+/* canvas {
   border: 1px solid black;
-  }
-
+  } */
 
 #score {
   display: flex;
@@ -20,5 +61,44 @@ canvas {
 
 sidebar {
   display: flex;
-  padding-top: 20px;
+  /* padding-top: 30px; */
+  font-family: "Black Han Sans";
+  color: white;
+  font-size: 40px;
+  text-shadow: 3px 2px blue;
+}
+
+#start-button {
+ 
+    width: 200px;
+    height: 100px;
+    line-height: 113px;
+    font-family: "Black Han Sans";
+    font-size: 80px;
+    background-color: #fefefe;
+    box-shadow: 5px -8px red;
+    color: red;
+    text-shadow: 3px 2px yellow;
+    border: transparent;
+}
+
+#play-again {
+   width: 200px;
+  height: 100px;
+  line-height: 113px;
+  font-family: "Black Han Sans";
+  font-size: 50px;
+  background-color:blue;
+  box-shadow: 5px -8px red;
+  color: red;
+  text-shadow: 3px 2px yellow;
+  border: transparent;
+}
+
+
+#game {
+  width: 0px;
+}
+
+#game-section-container {
 }
