@@ -1,7 +1,7 @@
 html {
   background-image: url("images/streetbackground.png");
   background-size: 100% 100%;
-  
+
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -33,12 +33,11 @@ body {
 h3 {
   margin: 0px;
   font-family: "Black Han Sans";
-  font-size: 50px;
+  font-size: 35px;
   color: white;
   text-shadow: 3px 2px blue;
-
 }
- p {
+p {
   font-size: 20px;
   color: #fefefe;
   padding: 10px;
@@ -64,39 +63,39 @@ h3 {
   } */
 
 #score {
+  margin-top: 200px;
   display: flex;
 }
 
 sidebar {
+  /* border: 3px solid purple; */
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between ;
+  align-items: center;
+  justify-content: space-between;
   font-family: "Black Han Sans";
   color: white;
   font-size: 40px;
   text-shadow: 3px 2px blue;
   width: 20%;
-  margin: 0;
+  margin-top: 150px;
 }
 
-#toxic{
+#toxic {
   padding-right: 10;
 }
 
-#soju{
+#soju {
   padding: 0;
 }
 
-#beer{
+#beer {
   padding: 0;
 }
 
-#soup{
+#soup {
   padding: 0;
-  
 }
-
 
 #start-button {
   width: 200px;
@@ -144,26 +143,27 @@ sidebar {
 }
 
 #game-flex-container {
- }
+  /* border: 3px solid green; */
+  display: flex;
+}
 
 #gameover-message {
+  /* border: 3px solid yellow; */
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-#printer{
+#printer {
   padding-left: 30px;
 }
 
-
-h4{
+h4 {
   font-family: "Black Han Sans";
   font-size: 40px;
   color: white;
   text-shadow: 3px 2px red;
   margin: 0px;
-  
 }
 
 .container-flex-img-point {
@@ -176,7 +176,7 @@ h4{
   flex-direction: row;
 }
 
-#score{
-  display:flex;
-  align-content: flex-end ;
+#score {
+  display: flex;
+  align-content: flex-end;
 }

@@ -46,6 +46,10 @@ class Score {
     this.game.soupSpeed = 3000
     }
 }
+
+// HighScore() {
+//     if (this.)
+// }
     
     }
 
