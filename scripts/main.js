@@ -1,6 +1,5 @@
 const $canvasScore = document.querySelector("#score");
 const $canvas = document.querySelector("#game");
-const storage = window.localStorage()
 const soundBottle = new Audio();
 soundBottle.src =
   "sounds/zapsplat_human_male_vomit_sick_into_bowl_002_17871.mp3";
