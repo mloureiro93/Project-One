@@ -27,6 +27,7 @@ document.getElementById("start-button").onclick = function() {
   document.getElementById("start-button").style.width = "0px";
   document.getElementById("start-button").style.height = "0px";
   document.getElementById("game").style.width = "350px";
+
 };
 
 
@@ -37,7 +38,7 @@ document.getElementById("game-section-container").style.width = "700px";
 document.getElementById("game-section-container").style.height = "700px";
 document.getElementById("game").style.visibility = "visible"; 
 document.getElementById("game").style.width = "300px";
-document.getElementById("game").style.height="400px"
+document.getElementById("game").style.height="400px";
 document.getElementById("gameover-message").style.visibility = "hidden";
 document.getElementById("printer").style.visibility = "hidden";
 document.getElementById("printer").style.width = "0px";
@@ -45,6 +46,7 @@ document.getElementById("printer").style.height = "0px";
 document.getElementById("play-again").style.visibility = "hidden";
 document.getElementById("play-again").style.width = "0px";
 document.getElementById("play-again").style.height = "0px";
+
 
 
 }

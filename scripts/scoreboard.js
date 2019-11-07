@@ -28,7 +28,7 @@ class Scoreboard {
     this.context.rect(0, 10, 200, 35);
     this.context.stroke(); 
     this.context.closePath();
-    this.context.drawImage(this.toxicImage, 205, -10,  70,  70); 
+   
   
    }
      

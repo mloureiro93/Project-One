@@ -17,7 +17,7 @@ class Gameover{
        document.getElementById("game-section-container").style.height = "0px";
        document.getElementById("gameover-message").style.visibility = "visible";
        document.getElementById("gameover-message").style.width = "700px";
-document.getElementById("gameover-message").style.height = "300px";
+       document.getElementById("gameover-message").style.height = "300px";
        document.getElementById("play-again").style.visibility = "visible";
        document.getElementById("play-again").style.width = "200px";
        document.getElementById("play-again").style.height = "100px";

@@ -35,6 +35,7 @@ class Game {
     this.score.score = 0;
     this.scoreboard.lifebarX = 0;
     this.fallingElements.elementY=20
+   
     this.startGame() 
    
     
@@ -61,7 +62,7 @@ class Game {
             this.newElements[i].drawSoup();
         }
     }
-    if(this.scoreboard.lifebarX >= 10) {
+    if(this.scoreboard.lifebarX >= 200) {
      this.gameover.drawGameover();
      } else {
         this.update(timestamp);

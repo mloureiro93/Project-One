@@ -9,15 +9,16 @@ html {
 
 h1 {
   font-family: "Black Han Sans";
-  font-size: 70px;
+  font-size: 50px;
   color: white;
   text-shadow: 3px 2px red;
   padding-top: 50px;
+  margin: 0px;
 }
 
 h2 {
   font-family: "Black Han Sans";
-  font-size: 50px;
+  font-size: 30px;
   color: white;
   text-shadow: 3px 2px red;
 }
@@ -25,14 +26,19 @@ h2 {
 body {
   padding-left: 50px;
   text-align: center;
+  margin: 0px;
 }
 
-#images p {
+h3 {
+  margin: 0px;
+}
+ p {
   font-size: 20px;
   color: #fefefe;
+  padding: 10px;
 }
 
-#soju {
+/* #soju {
   float: left;
   padding: 20px;
 }
@@ -45,7 +51,7 @@ body {
 #soup {
   float: left;
   padding-top: 20px;
-}
+} */
 
 /* canvas {
   border: 1px solid black;
@@ -59,6 +65,7 @@ sidebar {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: space-between ;
   font-family: "Black Han Sans";
   color: white;
   font-size: 40px;
@@ -66,6 +73,24 @@ sidebar {
   width: 20%;
   margin: 0;
 }
+
+#toxic{
+  padding-right: 10;
+}
+
+#soju{
+  padding: 0;
+}
+
+#beer{
+  padding: 0;
+}
+
+#soup{
+  padding: 0;
+  
+}
+
 
 #start-button {
   width: 200px;
@@ -120,6 +145,11 @@ sidebar {
   align-items: center;
   flex-direction: column;
 }
+
+#printer{
+  padding-left: 30px;
+}
+
 
 h4{
   font-family: "Black Han Sans";

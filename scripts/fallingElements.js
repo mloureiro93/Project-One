@@ -4,7 +4,7 @@ class FallingElements {
     this.height = game.height;
     this.width = game.width;
     this.context = game.context; 
-    this.elementX = Math.floor((Math.random() * this.width-50) + 50);
+    this.elementX = Math.floor((Math.random() * this.width-60) + 60);
     this.elementY = 20;
        }
    
