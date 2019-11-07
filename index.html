@@ -16,40 +16,79 @@
     <h2>(Duck Away)</h2>
   </header>
   <body>
- <div class="page-structure">
+    <div class="page-structure">
       <sidebar>
-          <h3>총점:</h3>
-             <canvas id="score" width="200" height="100"></canvas>
-          <div class="container-flex-img-point"> 
-          <img id = "soju" src="images/soju.png" alt="sojubottle" height="90" width="30">
-          <p>+20</p>
-          </div>
-         
-          <div class="container-flex-img-point"> 
-          <img id = "beer" src="images/beer.png" alt="beerbottle" height="100" width="30">
-          <p>+10</p>
-          </div>
-         
-          <div class="container-flex-img-point">
-           <img id = "soup" src="images/soup.png" alt="soupbowl" height="80" width="80">
-           <p>-10</p>
-          </div>
-         </sidebar>
-        
-     
-    <div id="game-section-container" >
-      <button id="start-button">시작</button>
-      <canvas id="game" width="250" height="450"></canvas>
-     <img id = "printer" src="images/printer.png" alt="printer" height="300" width="300">
-      <!-- <button id="reset-button">Reset</button> -->
-    </div>
-    <div id="gameover-message">
-        <h2>You got drunk and abused <br> the company printing policy...</h2>
-        <h2>Again..</h2>
-        <button id="play-again">다음 회식</button>
-    </div>
-  </div>
+        <h3>총점:</h3>
+        <canvas id="score" width="200" height="100"></canvas>
+        <div class="container-flex-img-point">
+          <img
+            id="toxic"
+            src="images/toxic_bottle.png"
+            alt="toxicbottle"
+            height="90"
+            width="70"
+          />
+          <p>200p</p>
+        </div>
 
+        <div class="container-flex-img-point">
+          <img
+            id="soju"
+            src="images/soju.png"
+            alt="sojubottle"
+            height="90"
+            width="30"
+          />
+          <p>+20</p>
+        </div>
+
+        <div class="container-flex-img-point">
+          <img
+            id="beer"
+            src="images/beer.png"
+            alt="beerbottle"
+            height="100"
+            width="30"
+          />
+          <p>+10</p>
+        </div>
+
+        <div class="container-flex-img-point">
+          <img
+            id="soup"
+            src="images/soup.png"
+            alt="soupbowl"
+            height="80"
+            width="80"
+          />
+          <p>-10</p>
+        </div>
+      </sidebar>
+      <div id="game-flex-container">
+        <div id="game-section-container">
+          <button id="start-button">시작</button>
+          <canvas id="game" width="300" height="400"></canvas>
+
+          <!-- <button id="reset-button">Reset</button> -->
+        </div>
+        <div id="gameover-message">
+          <img
+            id="printer"
+            src="images/printer.png"
+            alt="printer"
+            height="350"
+            width="350"
+          />
+          <h4>
+            You got drunk and abused <br />
+            the company printing policy... <br>
+            Again...
+          </h4>
+         
+          <button id="play-again">다음 회식</button>
+        </div>
+      </div>
+    </div>
 
     <script type="text/javascript" src="scripts/player.js"></script>
     <script type="text/javascript" src="scripts/fallingElements.js"></script>

@@ -2,10 +2,10 @@ class Player {
     constructor(game){  
     this.game = game;    
     this.context = game.context;
-    this.width = 60;
-    this.height = 80;
-    this.playerX = 135;
-    this.playerY = 370;
+    this.width = 45;
+    this.height = 65;
+    this.playerX = 130;
+    this.playerY = 340;
     this.vX = 10
     this.playerImg = new Image();
     this.playerImg.src = "images/player.png";

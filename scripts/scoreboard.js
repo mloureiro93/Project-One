@@ -10,14 +10,13 @@ class Scoreboard {
    //this.highScore = ?
   }
   WriteScore() {
-    this.context.font = "15px Arial";
-    this.context.color = "black";
+    this.context.font = "15px Arial Black";
     this.context.fillText(`Current Score: ${this.game.score.score}`, 20, 60);
   }
 
   PaintScoreboard() {
     this.context.fillStyle = "white";
-    this.context.fillRect(0, 0, 270, 100);
+    this.context.fillRect(0, 10, 200, 35);
   }
 
   LifeBar() {

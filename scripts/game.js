@@ -34,10 +34,9 @@ class Game {
     this.soupTimer = 0;
     this.score.score = 0;
     this.scoreboard.lifebarX = 0;
-    // this.soju.vy = 10;
-    // this.beer.vy = 8;
-    // this.soup.vy = 9;
+    this.fallingElements.elementY=20
     this.startGame() 
+   
     
     }
   drawEverything(timestamp) {
@@ -46,6 +45,7 @@ class Game {
     this.grid.PaintCanvas();
     this.background.drawBackground();
     this.player.draw();
+    this.scoreboard.PaintScoreboard()
     this.scoreboard.WriteScore();
     this.scoreboard.LifeBar(); 
    
@@ -61,7 +61,7 @@ class Game {
             this.newElements[i].drawSoup();
         }
     }
-    if(this.scoreboard.lifebarX >= 200) {
+    if(this.scoreboard.lifebarX >= 10) {
      this.gameover.drawGameover();
      } else {
         this.update(timestamp);
