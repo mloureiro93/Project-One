@@ -12,8 +12,6 @@ class Background {
     }
  drawBackground() {
     game.context.drawImage(this.bossImg, this.bossX, this.bossY, 40, 70);
-   //  this.context.fillStyle = "white";
-   //  this.context.fillRect(100, 80, 100, 50); 
    
 
  }

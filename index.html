@@ -17,9 +17,8 @@
   <body>
     <div class="page-structure">
       <sidebar>
-        <h3>총점:</h3>
-        <canvas id="score" width="200" height="60"></canvas>
-        <div class="container-flex-img-point">
+        <h3>게임 지시:</h3>
+          <div class="container-flex-img-point">
           <img
             id="toxic"
             src="images/toxic_bottle_smaller.png"
@@ -69,10 +68,12 @@
       <div id="game-flex-container">
         <div id="game-section-container">
           <button id="start-button">시작</button>
-          <canvas id="game" width="300" height="400"></canvas>
-
-          <!-- <button id="reset-button">Reset</button> -->
+          <canvas id="game" width="300" height="400">
+             
+        </canvas>
+         </div>
         </div>
+        <div><canvas id="score" width="300" height="200"></canvas></div>
         <div id="gameover-message">
           <img
             id="printer"

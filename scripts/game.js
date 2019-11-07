@@ -1,11 +1,12 @@
 class Game {
-  constructor($canvas,  $canvasScore) {
+  constructor($canvas, $canvasScore) {
     this.canvas = $canvas;
-    this.canvasScore =  $canvasScore;
-    this.contextScore =  $canvasScore.getContext("2d");
+    this.canvasScore = $canvasScore;
+    this.contextScore = $canvasScore.getContext("2d");
     this.context = $canvas.getContext("2d");
     this.height = $canvas.height;
     this.width = $canvas.width;
+    this.timer = new Timer(this);
     this.gameover = new Gameover(this);
     this.player = new Player(200, 450);
     this.background = new Background(200, 50);
@@ -22,9 +23,8 @@ class Game {
     this.beerSpeed = 1000;
     this.soupSpeed = 3000;
     this.controls.keys();
-    
   }
-  resetGame(){
+  resetGame() {
     soundHangover.pause();
     this.sojuSpeed = 1500;
     this.beerSpeed = 1000;
@@ -34,45 +34,49 @@ class Game {
     this.soupTimer = 0;
     this.score.score = 0;
     this.scoreboard.lifebarX = 0;
-    this.fallingElements.elementY=20
-   
-    this.startGame() 
-   
-    
-    }
+    this.fallingElements.elementY = 20;
+    this.timer.initialTime = 0;
+    this.timer.seconds = 0;
+    this.timer.startTimer()
+    this.startGame();
+  }
   drawEverything(timestamp) {
     this.context.clearRect(0, 0, 400, 600);
-    this.contextScore.clearRect(0, 0, 250, 100)
+    this.contextScore.clearRect(0, 0, 250, 100);
     this.grid.PaintCanvas();
     this.background.drawBackground();
     this.player.draw();
-    this.scoreboard.PaintScoreboard()
+    this.scoreboard.PaintScoreboard();
     this.scoreboard.WriteScore();
-    this.scoreboard.LifeBar(); 
-   
-    
+    this.scoreboard.LifeBar();
+    this.timer.drawTimer();
+    this.timer.getMinutes();
+    this.timer.getSeconds();
+
     for (let i = 0; i < this.newElements.length; i++) {
-        if (this.newElements[i].name === "soju") {
-            this.newElements[i].drawSoju();
-        }
-        if (this.newElements[i].name === "beer") {
-            this.newElements[i].drawBeer();
-        }
-        if (this.newElements[i].name === "soup") {
-            this.newElements[i].drawSoup();
-        }
+      if (this.newElements[i].name === "soju") {
+        this.newElements[i].drawSoju();
+      }
+      if (this.newElements[i].name === "beer") {
+        this.newElements[i].drawBeer();
+      }
+      if (this.newElements[i].name === "soup") {
+        this.newElements[i].drawSoup();
+      }
     }
-    if(this.scoreboard.lifebarX >= 200) {
-     this.gameover.drawGameover();
-     } else {
-        this.update(timestamp);
+    if (this.scoreboard.lifebarX >= 10) {
+      this.gameover.drawGameover();
+      clearInterval(this.timer.interval);
+    } else {
+      this.update(timestamp);
     }
 
     window.requestAnimationFrame(timestamp => this.drawEverything(timestamp));
-  }    
+  }
 
   update(timestamp) {
-     console.log(this.scoreboard.lifebarX) 
+    //  console.log(this.scoreboard.lifebarX)
+
     this.score.LevelUpdate();
     let randomNumber = Math.floor(Math.random() * 3 + 1);
     //pushing Sojus in the array
@@ -106,7 +110,7 @@ class Game {
         soundBottle.play();
         this.newElements.splice(i, 1);
         this.score.SojuPoints();
-        this.scoreboard.lifebarX += 20
+        this.scoreboard.lifebarX += 20;
         console.log(this.score.score);
         break;
       }
@@ -117,7 +121,7 @@ class Game {
         soundBottle.play();
         this.newElements.splice(i, 1);
         this.score.BeerPoints();
-        this.scoreboard.lifebarX += 10
+        this.scoreboard.lifebarX += 10;
         console.log(this.score.score);
         break;
       }
@@ -128,16 +132,13 @@ class Game {
         soundSoup.play();
         this.newElements.splice(i, 1);
         this.score.SoupPoints();
-        this.scoreboard.lifebarX -= 10
+        this.scoreboard.lifebarX -= 10;
         console.log(this.score.score);
       }
     }
-    
   }
-    
 
   startGame() {
     this.drawEverything();
-    
   }
 }

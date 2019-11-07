@@ -16,7 +16,13 @@ class Scoreboard {
 
   PaintScoreboard() {
     this.context.fillStyle = "white";
-    this.context.fillRect(0, 10, 200, 35);
+    this.context.fillRect(1, 10, 200, 35);
+    this.context.fillStyle = "white";
+    this.context.fillRect(1, 80, 130, 30);
+    this.context.strokeStyle = "black";
+    this.context.strokeRect(0, 78, 132, 32);
+
+
   }
 
   LifeBar() {
