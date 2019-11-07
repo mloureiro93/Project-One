@@ -29,14 +29,14 @@ class Score {
         
     if (this.game.score.score >= 30 && this.game.score.score < 70 ) {
     console.log('Level 2')    
-    this.game.sojuSpeed = 450
-    this.game.beerSpeed = 450
+    this.game.sojuSpeed = 350
+    this.game.beerSpeed = 350
     this.game.soupSpeed = 5000
         }
     if (this.game.score.score >= 70 && this.game.score.score <= 140 ) {
     console.log('Level 3')    
-    this.game.sojuSpeed = 350
-    this.game.beerSpeed = 350
+    this.game.sojuSpeed = 300
+    this.game.beerSpeed = 300
     this.game.soupSpeed = 4000
         }  
     if (this.game.score.score > 200) {

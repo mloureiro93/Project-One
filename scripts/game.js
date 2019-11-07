@@ -64,7 +64,7 @@ class Game {
         this.newElements[i].drawSoup();
       }
     }
-    if (this.scoreboard.lifebarX >= 10) {
+    if (this.scoreboard.lifebarX >= 200) {
       this.gameover.drawGameover();
       clearInterval(this.timer.interval);
     } else {
