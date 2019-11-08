@@ -31,7 +31,7 @@ class Score {
     console.log('Level 2')    
     this.game.sojuSpeed = 350
     this.game.beerSpeed = 350
-    this.game.soupSpeed = 5000
+    this.game.soupSpeed = 3000
         }
     if (this.game.score.score >= 70 && this.game.score.score <= 140 ) {
     console.log('Level 3')    
@@ -47,9 +47,7 @@ class Score {
     }
 }
 
-// HighScore() {
-//     if (this.)
-// }
+
     
     }
 

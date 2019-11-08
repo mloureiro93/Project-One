@@ -79,6 +79,7 @@ sidebar {
   text-shadow: 3px 2px blue;
   width: 20%;
   margin-top: 150px;
+
 }
 
 #toxic {
@@ -109,6 +110,7 @@ sidebar {
   color: red;
   text-shadow: 3px 2px yellow;
   border: transparent;
+  
 }
 
 #play-again {
@@ -116,7 +118,7 @@ sidebar {
   height: 100px;
   line-height: 113px;
   font-family: "Black Han Sans";
-  font-size: 50px;
+  font-size: 40px;
   background-color: blue;
   box-shadow: 5px -8px red;
   color: red;
@@ -140,6 +142,7 @@ sidebar {
   display: flex;
   justify-content: center;
   align-items: center;
+ 
 }
 
 #game-flex-container {
@@ -160,10 +163,10 @@ sidebar {
 
 h4 {
   font-family: "Black Han Sans";
-  font-size: 40px;
+  font-size: 30px;
   color: white;
   text-shadow: 3px 2px red;
-  margin: 0px;
+  margin: 10px;
 }
 
 .container-flex-img-point {
@@ -174,9 +177,45 @@ h4 {
 .page-structure {
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
 }
 
 #score {
   display: flex;
   align-content: flex-end;
+
+} 
+
+#pop-up {
+  border: transparent;
+  width: 600;
+  height: 400;
+  display: none;
+}
+
+#instructions {
+  margin-left: 950px;
+}
+
+sidebar button {
+  width: 200px;
+  height: 90;
+  font-family: "Black Han Sans";
+  font-size: 50px;
+  background-color: white;
+  box-shadow: 5px -8px blue;
+  color: yellow;
+  text-shadow: 3px 2px blue;
+  border: transparent;
+}
+
+#return {
+  width: 200px;
+  height: 60px;
+  font-family: "Black Han Sans";
+  font-size: 20px;
+  background-color: white;
+  color: yellow;
+  text-shadow: 3px 2px blue;
+  border: transparent;
 }

@@ -23,6 +23,7 @@ class Game {
     this.beerSpeed = 1000;
     this.soupSpeed = 3000;
     this.controls.keys();
+    this.gameIsRunning = false;
   }
   resetGame() {
     soundHangover.pause();
@@ -37,7 +38,8 @@ class Game {
     this.fallingElements.elementY = 20;
     this.timer.initialTime = 0;
     this.timer.seconds = 0;
-    this.timer.startTimer()
+    this.timer.startTimer();
+    this.gameIsRunning = true;
     this.startGame();
   }
   drawEverything(timestamp) {
@@ -64,14 +66,17 @@ class Game {
         this.newElements[i].drawSoup();
       }
     }
-    if (this.scoreboard.lifebarX >= 200) {
+    if (this.scoreboard.lifebarX >= 10) {
+      this.gameIsRunning = false;
       this.gameover.drawGameover();
       clearInterval(this.timer.interval);
     } else {
       this.update(timestamp);
     }
 
-    window.requestAnimationFrame(timestamp => this.drawEverything(timestamp));
+    if (this.gameIsRunning) {
+      window.requestAnimationFrame(timestamp => this.drawEverything(timestamp));
+    }
   }
 
   update(timestamp) {
@@ -103,6 +108,10 @@ class Game {
 
     for (let i = 0; i < this.newElements.length; i++) {
       this.newElements[i].updateBottle();
+      if (this.scoreboard.lifebarX >= 200){
+        this.scoreboard.lifebarX === 200
+      }
+    
       if (
         this.newElements[i].name === "soju" &&
         this.fallingElements.detectCollision(this.player, this.newElements[i])
@@ -139,6 +148,7 @@ class Game {
   }
 
   startGame() {
+    this.gameIsRunning = true;
     this.drawEverything();
   }
 }

@@ -4,7 +4,7 @@ class FallingElements {
     this.height = game.height;
     this.width = game.width;
     this.context = game.context; 
-    this.elementX = Math.floor((Math.random() * this.width-60) + 60);
+    this.elementX = Math.floor((Math.random() * this.width-70) + 70);
     this.elementY = 20;
        }
    
@@ -66,7 +66,7 @@ this.width = 50;
 this.height = 50;
 this.soupImg = new Image();
 this.soupImg.src = "images/soup.png";    
-this.vy = 9;  
+this.vy = 7;  
  }
  drawSoup() {
         game.context.drawImage(this.soupImg, this.elementX, this.elementY, this.width, this.height);  

@@ -18,7 +18,10 @@
   <body>
     <div class="page-structure">
       <sidebar>
-        <h3>게임 지시:</h3>
+        <button id="instructions-button">게임 지시</button>
+        <div id='pop-up'>   <img id="instructions" src="images/instructions.png" width="600" height="400"/> 
+         <button id="return">Back to Menu</button> 
+        </div>
           <div class="container-flex-img-point">
           <img
             id="toxic"
@@ -70,9 +73,12 @@
         <div id="game-section-container">
           <button id="start-button">시작</button>
           <canvas id="game" width="300" height="400">
-             
+                      
         </canvas>
+      
+        </div>
          </div>
+         
         
         
         <div id="gameover-message">
